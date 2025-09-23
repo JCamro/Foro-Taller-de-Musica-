@@ -75,7 +75,7 @@ main {
 /* Columna derecha (slideshow) */
 .nosotros .slideshow {
   flex: 1;                       /* 7 */
-  display: flex;                 /* 8 */
+  display: inline-block;                 /* 8 */
   justify-content: center;       /* 9 */
   gap: 20px;
 }
@@ -98,13 +98,32 @@ main {
 
 .instrumentos article {
     display: inline-block;
-    padding: 60px;
+    padding: 40px;
     margin: 20px;
-    background-color: black;    
+    background-color: rgb(187, 187, 187);    
+    border-radius: 10px;
+    max-width: 200px;
+    
 }
 
 .instrumentos article img {
-    width: 1000px;
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    background-color: black;
+    margin: 0px;
+}
+
+.instrumentos p {
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#gelectrica {
+    font-size: medium;
 }
 
 
