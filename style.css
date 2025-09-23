@@ -36,7 +36,6 @@ main img{
   width: 150px;   /* ocupa todo el ancho del contenedor */
   height: 150px;  /* mantiene la proporción original */
   object-fit: cover;
-  border-radius: 40pc;
 }
 main {
     text-align: center;
@@ -83,26 +82,30 @@ main {
 
 /*TALLERES*/
 .talleres {
-    background-color: aqua ;
+    background-color: grey ;    
     padding: 1%;
     align-items: center;
     justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    color: white;
 }
 
 .instrumentos  {
-    font-size: 10px;
+    font-size: x-large;
     padding: 0px;
 }
 
+.instrumentos article {
+    display: inline-block;
+    padding: 60px;
+    margin: 20px;
+    background-color: black;    
+}
 
-
-
-
-
-
-
-
-
+.instrumentos article img {
+    width: 1000px;
+}
 
 
 
