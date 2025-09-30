@@ -6,27 +6,47 @@
     <title>Taller de Musica Elguera</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-
-        <div class="logo">
-            <img src="imagenes/logotaller (1).png" alt="">
+    <header class="sticky-nav">
+        <div class="sticky-nav-container">
+            <div class="sticky-nav-logo">
+                <i class="fas fa-mountain"></i>
+                <img src="imagenes/hero-img/logotaller (1).png" alt="">
+                <span><a href="index.html">Taller de Musica Elguera</a></span>
+            </div>
+            
+            <nav class="sticky-nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#instrumentos">Instrumentos</a></li>
+                    <li><a href="#ubicacion">Ubicacion</a></li>
+                    <li><a href="#contacto">Contactos</a></li>
+                </ul>
+            </nav>
+            <button class="sticky-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#instrumentos">Instrumentos</a></li>
-                <li><a href="#ubicacion">Ubicacion</a></li>
-                <li><a href="#contacto">Contactos</a></li>
-            </ul>
-        </nav>
 
     </header>
 
+    <section class="hero-section">
+            <div class="hero-content">
+                <h2>Aprende a tocar un instrumento con nosotros</h2>
+                <button><a href="">Explorar</a></button>
+            </div>
+
+            <div class="hero-img">
+                <img src="imagenes/hero-img/heroimg.png" alt="imagen">
+            </div>
+    </section>
+
     <main>
+        
+
 
         <section class="nosotros" id="nosotros">
             <div class="texto">
@@ -34,12 +54,59 @@
                 <p>Aprende a tocar un instrumento con nosotros, este año 2025 se viene con muchas novedades: 
                     Guitarra, batería, Violín, Canto, Órgano, Aprestamiento musical y Dibujo y pintura!!</p>
             </div>
-
-            <div class="slideshow">
-                <img src="imagenes/slide/slide1.jpg" >
-                <img src="imagenes/slide/slide2.jpg" >
-                <img src="imagenes/slide/slide4.jpg" >
-                <img src="imagenes/slide/slide3.jpg" >
+            
+            
+            <div class="infinite-scroll-container">
+                <div class="infinite-scroll-track">
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-star"></i>
+                            <img src="imagenes/slide/slide1.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-heart"></i>
+                            <img src="imagenes/slide/slide2.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-moon"></i>
+                            <img src="imagenes/slide/slide4.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-star"></i>
+                            <img src="imagenes/slide/slide3.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-star"></i>
+                            <img src="imagenes/slide/slide1.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-heart"></i>
+                            <img src="imagenes/slide/slide2.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-moon"></i>
+                            <img src="imagenes/slide/slide4.jpg" >
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-card">
+                        <div class="card-content">
+                            <i class="fas fa-star"></i>
+                            <img src="imagenes/slide/slide3.jpg" >
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
