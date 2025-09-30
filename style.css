@@ -423,5 +423,12 @@ main {
     padding: 0px;
 }
 
+iframe {
+  transition: transform 0.5s ease;
+}
+
+iframe:hover {
+  transform: scale(1.05);
+}
 
 
