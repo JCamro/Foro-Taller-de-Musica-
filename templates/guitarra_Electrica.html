@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/baseinstrumetos.css">
+    <link rel="stylesheet" href="/static/css/contenidoinstrumentos.css">
+    <title>Guitarra Eléctrica | Taller De Musica Elguera</title>
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <div class="logo-img">
+            <a href="{{url_for('index')}}">
+                <img src="/static/imagenes/hero-img/logotaller (1).png" alt="logo">
+                
+            </a>
+            <h2>Taller de Música Elguera</h2>
+        </div>
+
+        <ul>
+            <li><a href="{{url_for('index')}}">Inicio</a></li>
+            <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+            <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+            <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+            <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+            <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section g-electrica" id="g-electrica">
+        <h2>Guitarra Electrica</h2>
+        <h3>Explora nuevos sonidos y define tu propio estilo</h3>
+        <button><a href="{{url_for('guitarra_electrica')}}#precios">¡Incribe a tu hijo aqui!</a></button>
+    </section>
+
+    <main>
+        
+        <section class="instrument-incentivo">
+            <div class="instrument-info">
+                <h2>¡Desata tu potencial en las seis cuerdas!</h2>
+                <p>
+                    Nuestras clases de guitarra eléctrica están diseñadas para todas las edades y 
+                    niveles. Te guiamos paso a paso para que no solo toques notas, sino que entiendas 
+                    la armonía, el ritmo y logres improvisar con fluidez. ¡Forma parte de nuestra 
+                    comunidad y explora el poder del rock!
+                </p>
+            </div>
+            
+            <div class="instrument-info-imagen">
+                <img src="/static/imagenes/intrumentos_sf/guitarra_electrica_sf.png" alt="Guitarra Eléctrica Profesional">
+            </div>
+        </section>
+
+        <section class="instrument-content">
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>¿Qué hace única nuestra metodología de guitarra?</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="https://svgsilh.com/svg_v2/2379396.svg" alt="Expertos" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Clases con expertos</h4>
+                            <p>Domina desde los riffs más básicos hasta solos complejos con técnicas de tapping, sweep picking y expresión total.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/disco_svg.svg" alt="Repertorio" width="25px"></span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Repertorio Moderno</h4>
+                            <p>Trabajamos con la música que te apasiona para que cada sesión sea emocionante, logrando que temas complejos se sientan naturales.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/mic_svg.svg" alt="Escenarios" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Experiencia en Bandas</h4>
+                            <p>Toca tus canciones favoritas, sube a escenarios y comparte con otros músicos en nuestras presentaciones en vivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>Información Importante</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/silueta_svg.svg" alt="Edad" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Edades</h4>
+                            <p>Clases disponibles desde los 7 años. Adaptamos el tamaño del instrumento y la técnica según la edad del alumno.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/reloj_pg.png" alt="Duración" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Duración</h4>
+                            <p>Sesiones de 60 minutos enfocadas en técnica, teoría aplicada y práctica de canciones elegidas.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/frecuencia_pg.png" alt="Frecuencia" width="35px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Frecuencia</h4>
+                            <p>Flexibilidad total: elige entrenar 1, 2 o 3 veces por semana según tus objetivos musicales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="precios-section" id="precios">
+                <h2 class="precios-titulo">Planes de Inversión Musical</h2>
+                
+                <div class="precios-container">                        
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Inicial</h3>
+                            <p>Ideal para comenzar</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">80</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>4 sesiones mensuales</li>
+                            <li>Material digital incluido</li>
+                            <li>Asesoría personalizada</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-electrica&plan=inicial" class="btn-precio">Empezar ya</a>
+                    </div>
+
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Basico</h3>
+                            <p>Constancia en clase</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">160</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>8 sesiones mensuales</li>
+                            <li>Material digital incluido</li>
+                            <li>Asesoría personalizada</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-electrica&plan=basico" class="btn-precio">Empezar ya</a>
+                    </div>
+
+                    <div class="precio-card destacado">
+                        <div class="precio-tag">Más Popular</div>
+                        <div class="precio-header">
+                            <h3>Paquete Pro</h3>
+                            <p>Progreso acelerado</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">200</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>12 sesiones mensuales</li>
+                            <li>Acceso a Jam Sessions</li>
+                            <li>Certificado de nivel</li>
+                            <li>Préstamo de instrumento</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-electrica&plan=pro" class="btn-precio">¡Inscribirme ahora!</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+    </main>
+
+    <footer class="footer">
+        <nav class="foot apartados">
+            <ul>
+                <li><a href="{{url_for('index')}}">Inicio</a></li>
+                <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+                <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+                <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+                <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+                <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+            </ul>
+        </nav>
+
+        <div class="foot social-media">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/TallerDeMusicaElguera?locale=es_LA"><img src="/static/imagenes/logo-redes/logo_face.jfif" alt="Facebook"></a>
+                </li>
+                <li>
+                    <a href=""><img src="/static/imagenes/logo-redes/logo_wp.jfif" alt="Whatsapp"></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@marcbandrock9383/videos"><img src="/static/imagenes/logo-redes/logo_yt.jfif" alt="Youtube"></a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@taller.elguera"><img src="/static/imagenes/logo-redes/logo_tiktok.jfif" alt="TikTok"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body> 
+</html>

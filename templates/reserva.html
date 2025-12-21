@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/baseinstrumetos.css">
+    <link rel="stylesheet" href="/static/css/contenidoinstrumentos.css">
+    <title>Guitarra Eléctrica | Taller De Musica Elguera</title>
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <div class="logo-img">
+            <a href="{{url_for('index')}}">
+                <img src="/static/imagenes/hero-img/logotaller (1).png" alt="logo">
+                
+            </a>
+            <h2>Taller de Música Elguera</h2>
+        </div>
+
+        <ul>
+            <li><a href="{{url_for('index')}}">Inicio</a></li>
+            <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+            <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+            <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+            <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+            <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-reserva">
+
+        <section class="registro-section" id="inscripcion">
+
+            <div class="form-container">
+                <h2>Ficha de Inscripción</h2>
+                <p>Completa tus datos para empezar tu aventura musical con nosotros.</p>
+
+                <form action="{{url_for('reserva')}}" method="POST" class="inscripcion-form">
+
+                    <div class="form-group">
+                        <label for="apellido-paterno">Apellido Paterno del Estudiante</label>
+
+                        <input type="text" id="apellido-paterno" name="apellido-paterno" placeholder="Ej: Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido-materno">Apellido Materno del Estudiante</label>
+
+                        <input type="text" id="apellido-materno" name="apellido-materno" placeholder="Ej: Valdivia" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombres del Estudiante</label>
+
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Rodrigo" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dni">DNI</label>
+
+                            <input type="text" id="dni" name="dni" placeholder="8 dígitos" maxlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad</label>
+
+                            <input type="number" id="edad" name="edad" placeholder="Años" min="3" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Número Telefónico</label>
+
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 987 654 321" required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="instrumento">Instrumento / Taller</label>
+
+                            <select id="instrumento" name="instrumento" required>
+                                <option value="" disabled selected>Selecciona uno</option>
+                                <option value="guitarra-electrica">Guitarra Eléctrica</option>
+                                <option value="guitarra-acustica">Guitarra Acústica</option>
+                                <option value="bateria">Batería</option>
+                                <option value="canto">Canto</option>
+                                <option value="organo">Órgano / Teclado</option>
+                                <option value="violin">Violín</option> <option value="aprestamiento">Aprestamiento Musical</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="plan">Elige tu Plan</label>
+
+                            <select id="plan" name="plan" required>
+                                <option value="" disabled selected>Selecciona tu plan</option>
+                                <option value="inicial">Paquete Inicial (4 sesiones) - S/ 80</option>
+                                <option value="basico">Paquete Básico (8 sesiones) - S/ 160</option>
+                                <option value="pro">Paquete Pro (12 sesiones) - S/ 200</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn-submit">Enviar Inscripción</button>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <nav class="foot apartados">
+            <ul>
+                <li><a href="{{url_for('index')}}">Inicio</a></li>
+                <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+                <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+                <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+                <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+                <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+            </ul>
+        </nav>
+
+        <div class="foot social-media">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/TallerDeMusicaElguera?locale=es_LA"><img src="/static/imagenes/logo-redes/logo_face.jfif" alt="Facebook"></a>
+                </li>
+                <li>
+                    <a href=""><img src="/static/imagenes/logo-redes/logo_wp.jfif" alt="Whatsapp"></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@marcbandrock9383/videos"><img src="/static/imagenes/logo-redes/logo_yt.jfif" alt="Youtube"></a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@taller.elguera"><img src="/static/imagenes/logo-redes/logo_tiktok.jfif" alt="TikTok"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/static/script/script.js"></script>
+</body> 
+</html>

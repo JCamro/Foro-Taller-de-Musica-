@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/baseinstrumetos.css">
+    <link rel="stylesheet" href="/static/css/contenidoinstrumentos.css">
+    <title>Aprestamiento Musical | Taller De Musica Elguera</title>
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <div class="logo-img">
+            <a href="/templates/index.html">
+                <img src="/static/imagenes/hero-img/logotaller (1).png" alt="logo">
+                
+            </a>
+            <h2>Taller de Música Elguera</h2>
+        </div>
+
+        <ul>
+            <li><a href="{{url_for('index')}}">Inicio</a></li>
+            <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+            <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+            <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+            <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+            <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section aprestamiento" id="aprestamiento">
+        <h2>Aprestamiento Musical</h2>
+        <h3>Despertando la sensibilidad musical desde la infancia</h3>
+        <button><a href="{{url_for('aprestamiento')}}#precios">¡Incribe a tu hijo aqui!</a></button>
+    </section>
+
+    <main>
+        <section class="instrument-incentivo">
+            <div class="instrument-info">
+                <h2>Despierta su mundo a través del sonido</h2>
+                <p>
+                    Descubre el lenguaje de la música a través del juego. 
+                    Potenciamos la coordinación, el oído y la creatividad 
+                    de los más pequeños mediante la exploración sonora. 
+                    ¡Dale a tu hijo las herramientas para amar la música desde sus primeros pasos!
+                </p>
+            </div>
+            
+            <div class="instrument-info-imagen">
+                <img src="/static/imagenes/intrumentos_sf/xilofono_sf.png" alt="Xilofono">
+            </div>
+        </section>
+
+
+        <section class="instrument-content">
+
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>¿Cómo iniciamos el viaje musical de tu hijo?</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/nota_m_svg.svg" alt="Nota Musical" width="20px"></span> 
+                        </div>
+                        
+                        <div class="card-content">
+                            <h4>Juego y Sonido</h4>
+                            <p>Aprendizaje basado en la exploración lúdica y el movimiento corporal para conectar con el ritmo.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/oreja_pg.png" alt="Oreja" width="30px"></span>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h4>Desarrollo Integral</h4>
+                            <p>Potenciamos la coordinación motriz, la atención y la sensibilidad auditiva desde temprana edad.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/libro_svg.svg" alt="Lectura" width="30px"></span> 
+                        </div>
+                        
+                        <div class="card-content">
+                            <h4>Primeras Amistades</h4>
+                            <p>Un espacio seguro y divertido para compartir, socializar y crear música en grupo por primera vez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>Información Importante</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/silueta_svg.svg" alt="Edad" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Edades</h4>
+                            <p>Programas personalizados desde los 3 años hasta adultos sin límite de edad.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/reloj_pg.png" alt="Duración" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Duración</h4>
+                            <p>Sesiones de 60 minutos de práctica efectiva para asegurar un progreso constante.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/frecuencia_pg.png" alt="Frecuencia" width="35px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Frecuencia</h4>
+                            <p>Tú eliges el ritmo de aprendizaje: desde 1 hasta 3 veces por semana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <section class="precios-section" id="precios">
+                <h2 class="precios-titulo">Planes de Inicio Musical Temprano</h2>
+                
+                <div class="precios-container">                        
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Inicial</h3>
+                            <p>Primer contacto musical</p>
+                        </div>
+
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span>
+                            <span class="valor">80</span>
+                        </div>
+
+                        <ul class="precio-detalles">
+                            <li>4 sesiones (1 por semana)</li>
+                            <li>Material sensorial incluido</li>
+                            <li>Reporte de avance lúdico</li>
+                        </ul>
+
+                        <a href="{{url_for('reserva')}}?instrumento=aprestamiento&plan=inicial" class="btn-precio">Iniciar aventura</a>
+                    </div>
+
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Basico</h3>
+                            <p>Constancia y diversión</p>
+                        </div>
+
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span>
+                            <span class="valor">160</span>
+                        </div>
+
+                        <ul class="precio-detalles">
+                            <li>8 sesiones (2 por semana)</li>
+                            <li>Exploración de instrumentos</li>
+                            <li>Guía para padres en casa</li>
+                        </ul>
+
+                        <a href="{{url_for('reserva')}}?instrumento=aprestamiento&plan=basico" class="btn-precio">Empezar ya</a>
+                    </div>
+
+                    <div class="precio-card destacado">
+                        <div class="precio-tag">Recomendado</div>
+                        <div class="precio-header">
+                            <h3>Paquete Pro</h3>
+                            <p>Desarrollo rítmico total</p>
+                        </div>
+
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span>
+                            <span class="valor">200</span>
+                        </div>
+
+                        <ul class="precio-detalles">
+                            <li>12 sesiones mensuales</li>
+                            <li>Taller de ensamble grupal</li>
+                            <li>Acceso a eventos infantiles</li>
+                            <li>Kit de percusión menor</li>
+                        </ul>
+
+                        <a href="{{url_for('reserva')}}?instrumento=aprestamiento&plan=pro" class="btn-precio">¡Inscribir a mi hijo!</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+    </main>
+
+    <footer class="footer">
+        <nav class="foot apartados">
+            <ul>
+                <li><a href="{{url_for('index')}}">Inicio</a></li>
+                <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+                <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+                <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+                <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+                <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+            </ul>
+        </nav>
+
+        <div class="foot social-media">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/TallerDeMusicaElguera?locale=es_LA"><img src="/static/imagenes/logo-redes/logo_face.jfif" alt="Facebook"></a>
+                </li>
+                <li>
+                    <a href=""><img src="/static/imagenes/logo-redes/logo_wp.jfif" alt="Whatsapp"></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@marcbandrock9383/videos"><img src="/static/imagenes/logo-redes/logo_yt.jfif" alt="Youtube"></a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@taller.elguera"><img src="/static/imagenes/logo-redes/logo_tiktok.jfif" alt="TikTok"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body> 
+</html>

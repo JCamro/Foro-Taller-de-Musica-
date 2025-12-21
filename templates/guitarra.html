@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/baseinstrumetos.css">
+    <link rel="stylesheet" href="/static/css/contenidoinstrumentos.css">
+    <title>Guitarra Acústica | Taller De Musica Elguera</title>
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <div class="logo-img">
+            <a href="{{url_for('index')}}">
+                <img src="/static/imagenes/hero-img/logotaller (1).png" alt="logo">
+                
+            </a>
+            <h2>Taller de Música Elguera</h2>
+        </div>
+
+        <ul>
+            <li><a href="{{url_for('index')}}">Inicio</a></li>
+            <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+            <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+            <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+            <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+            <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section g-acustica" id="g-acustica">
+        <h2>Guitarra Acustica</h2>
+        <h3>Lleva tu música a cualquier lugar con la guitarra</h3>
+        <button><a href="{{url_for('guitarra_acustica')}}#precios">¡Incribe a tu hijo aqui!</a></button>
+    </section>
+
+    <main>
+
+        <section class="instrument-incentivo">
+            <div class="instrument-info">
+                <h2>Tu música te acompaña a donde vayas</h2>
+                <p>
+                    En nuestro taller aprenderás desde los primeros acordes para acompañar tus canciones favoritas 
+                    hasta técnicas avanzadas de arpegio y digitación. Te guiaremos para que desarrolles 
+                    un sonido cálido y una ejecución fluida. ¡Empieza hoy a tocar el instrumento que conecta con el alma!
+                </p>
+            </div>
+            
+            <div class="instrument-info-imagen guitarra">
+                <img src="/static/imagenes/intrumentos_sf/guitarra_acus_sf.png" alt="Guitarra Acústica Taller Elguera" class="guitarra-img-info">
+            </div>
+        </section>
+
+        <section class="instrument-content">
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>¿Qué aprenderás en nuestras clases de acústica?</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/nota_m_svg.svg" alt="Nota Musical" width="20px"></span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Acordes y Ritmos</h4>
+                            <p>Domina las posiciones básicas y ritmos fundamentales para tocar cualquier balada, pop o música criolla.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/guitarra_svg.svg" alt="Guitarra" width="25px"></span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Digitación y Arpegios</h4>
+                            <p>Desarrolla agilidad en tus dedos y aprende a crear texturas musicales hermosas mediante el punteado.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/lectura_svg.svg" alt="Lectura" width="35px"></span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Lectura y Teoría</h4>
+                            <p>Aprende a leer tablaturas y partituras de forma sencilla para que puedas estudiar cualquier pieza por tu cuenta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instrument-content-info">
+                <div class="instrument-titulo">
+                    <h3>Información Importante</h3>
+                </div>
+
+                <div class="intrument-conteiner-card">
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/silueta_svg.svg" alt="Edad" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Edades</h4>
+                            <p>Desde los 7 años en adelante. Contamos con guitarras de estudio adaptadas para todas las estaturas.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/reloj_pg.png" alt="Duración" width="30px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Duración</h4>
+                            <p>Sesiones de 60 minutos: equilibrio perfecto entre técnica de mano derecha y repertorio melódico.</p>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="card-icon">
+                            <span><img src="/static/imagenes/iconos/frecuencia_pg.png" alt="Frecuencia" width="35px"></span> 
+                        </div>
+                        <div class="card-content">
+                            <h4>Frecuencia</h4>
+                            <p>Tú marcas el paso de tu aprendizaje con opciones de 1, 2 o 3 sesiones por semana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="precios-section" id="precios">
+                <h2 class="precios-titulo">Planes de Formación Acústica</h2>
+                
+                <div class="precios-container">                        
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Inicial</h3>
+                            <p>Iniciación melódica</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">80</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>4 sesiones (1 por semana)</li>
+                            <li>Círculos de acordes básicos</li>
+                            <li>Material de estudio digital</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-acustica&plan=inicial" class="btn-precio">Iniciar ahora</a>
+                    </div>
+
+                    <div class="precio-card">
+                        <div class="precio-header">
+                            <h3>Paquete Basico</h3>
+                            <p>Acompañamiento fluido</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">160</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>8 sesiones (2 por semana)</li>
+                            <li>Técnicas de rasgueo y ritmo</li>
+                            <li>Repertorio de canciones populares</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-acustica&plan=basico" class="btn-precio">Quiero mejorar</a>
+                    </div>
+
+                    <div class="precio-card destacado">
+                        <div class="precio-tag">El Más Popular</div>
+                        <div class="precio-header">
+                            <h3>Paquete Pro</h3>
+                            <p>Maestría en la guitarra</p>
+                        </div>
+                        <div class="precio-monto">
+                            <span class="moneda">S/</span><span class="valor">200</span>
+                        </div>
+                        <ul class="precio-detalles">
+                            <li>12 sesiones mensuales</li>
+                            <li>Técnicas de Fingerstyle</li>
+                            <li>Grabación de video musical</li>
+                            <li>Composición básica de temas</li>
+                        </ul>
+                        <a href="{{url_for('reserva')}}?instrumento=guitarra-acustica&plan=pro" class="btn-precio">¡Ser un Solista!</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <nav class="foot apartados">
+            <ul>
+                <li><a href="{{url_for('index')}}">Inicio</a></li>
+                <li><a href="{{url_for('index')}}#nosotros">Nosotros</a></li>
+                <li><a href="{{url_for('index')}}#instrumentos">Instrumentos</a></li>
+                <li><a href="{{url_for('index')}}#talleres">Talleres</a></li>
+                <li><a href="{{url_for('index')}}#ubicacion">Ubicación</a></li>
+                <li><a href="{{url_for('reserva')}}">Reserva</a></li>
+            </ul>
+        </nav>
+
+        <div class="foot social-media">
+            <ul>
+                <li><a href="https://www.facebook.com/TallerDeMusicaElguera"><img src="/static/imagenes/logo-redes/logo_face.jfif" alt="Facebook"></a></li>
+                <li><a href="#"><img src="/static/imagenes/logo-redes/logo_wp.jfif" alt="Whatsapp"></a></li>
+                <li><a href="https://www.youtube.com/@marcbandrock9383/videos"><img src="/static/imagenes/logo-redes/logo_yt.jfif" alt="Youtube"></a></li>
+                <li><a href="https://www.tiktok.com/@taller.elguera"><img src="/static/imagenes/logo-redes/logo_tiktok.jfif" alt="TikTok"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body> 
+</html>
