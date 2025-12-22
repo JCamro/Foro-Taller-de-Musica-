@@ -64,40 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // DATOS DEL FORMULARIO
-
-const formulario = document.querySelector(".inscripcion-form");
-
 formulario.addEventListener("submit", (e) => {
-
-    e.preventDefault();
-
+    
     const nombre = document.getElementById("nombre").value;
     const dniInput = document.getElementById("dni").value;
     const numeroInput = document.getElementById("telefono").value;
     const edadInput = document.getElementById("edad").value;
     const instrumento = document.getElementById("instrumento").value;
-    const plan = document.getElementById("plan").value;
 
-    // Validaciones
     if (!dniValido(dniInput)) {
+        e.preventDefault(); // Detiene el envío si el DNI está mal
         alert("DNI inválido: Debe tener 8 dígitos numéricos.");
         return;
     }
 
     if (!numeroValido(numeroInput)) {
+        e.preventDefault(); // Detiene el envío si el número está mal
         alert("Número telefónico inválido: Debe empezar con 9 y tener 9 dígitos.");
         return;
     }
 
     try {
-
         if (validarClasificacionEdad(parseInt(edadInput), instrumento)) {
-            alert("¡Reserva enviada exitosamente para " + nombre + "!");
             
-            formulario.reset(); 
+            alert("¡Procesando reserva para " + nombre + "!");
         }
-
     } catch (error) {
+        e.preventDefault(); // Detiene el envío si la edad no corresponde al instrumento
         alert(error.message); 
     }
 });
