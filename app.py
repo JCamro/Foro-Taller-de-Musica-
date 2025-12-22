@@ -4,8 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+# --- CONFIGURACIÓN DE BASE DE DATOS ---
 uri = os.getenv("DATABASE_URL") 
 
+# Corrección de protocolo para Render
 if uri and uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
 
@@ -14,6 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# --- MODELO DE DATOS ---
 class Reserva(db.Model):
     dni = db.Column(db.String(20), primary_key=True)
     ap_paterno = db.Column(db.String(100), nullable=False)
@@ -23,17 +26,9 @@ class Reserva(db.Model):
     instrumento = db.Column(db.String(50), nullable=False)
     plan = db.Column(db.String(50), nullable=False)
 
-
-# Crear las tablas en la base de datos
+# Crear las tablas automáticamente si no existen
 with app.app_context():
     db.create_all()
-
-# --- BLOQUE TEMPORAL PARA REINICIAR LA TABLA ---
-@app.route("/reset_db_12345")
-def reset_db():
-    db.drop_all()    # Borra la tabla vieja
-    db.create_all()  # Crea la tabla nueva con tus columnas de DNI, Apellidos, etc.
-    return "Base de datos reiniciada con éxito. Ya puedes borrar esta ruta."
 
 # --- RUTAS ---
 @app.route("/")
@@ -71,7 +66,7 @@ def violin():
 @app.route("/reserva", methods=["GET", "POST"])
 def reserva():
     if request.method == "POST":
-        # Datos del formulario
+        # Captura de datos del formulario (deben coincidir con el 'name' en HTML)
         nueva_reserva = Reserva(
             dni=request.form.get("dni"),
             ap_paterno=request.form.get("apellido-paterno"),
@@ -82,19 +77,19 @@ def reserva():
             plan=request.form.get("plan")
         )
         
-        # Guardar en la base de datos de Render
         try:
             db.session.add(nueva_reserva)
             db.session.commit()
-            return redirect(url_for('index')) # Redirige al inicio tras éxito
+            return redirect(url_for('index'))
         except Exception as e:
+            db.session.rollback()  # Limpia la sesión para permitir nuevos intentos
             return f"Hubo un error al guardar la reserva: {e}"
 
     return render_template("reserva.html")
 
-
 @app.route("/admin_taller")
 def admin():
+    # Consulta todos los registros guardados
     inscritos = Reserva.query.all()
     
     html = """
@@ -126,7 +121,6 @@ def admin():
     
     html += "</table><br><a href='/'>Volver al inicio</a>"
     return html
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
