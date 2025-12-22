@@ -83,5 +83,25 @@ def reserva():
 
     return render_template("reserva.html")
 
+@app.route("/admin_taller")
+def admin():
+    # Obtenemos todas las reservas de la base de datos
+    inscritos = Reserva.query.all()
+    
+    # Creamos una tabla simple en HTML para mostrar los resultados
+    html = """
+    <h1>Lista de Alumnos Inscritos</h1>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <tr>
+            <th>ID</th><th>Nombre</th><th>DNI</th><th>Instrumento</th><th>Plan</th>
+        </tr>
+    """
+    for alumno in inscritos:
+        html += f"<tr><td>{alumno.id}</td><td>{alumno.nombre}</td><td>{alumno.dni}</td><td>{alumno.instrumento}</td><td>{alumno.plan}</td></tr>"
+    
+    html += "</table><br><a href='/'>Volver al inicio</a>"
+    return html
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
