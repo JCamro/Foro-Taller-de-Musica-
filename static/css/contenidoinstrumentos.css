@@ -1,47 +1,72 @@
-main  {
-    padding: 10% 6% 7% 6%;
+main {
+    padding: clamp(1rem, 5%, 3rem) 5%;
 }
 
 .instrument-incentivo {
-    margin: 3%;
-    padding: 1%;
+    margin: 3rem auto;
+    padding: 5em;
     
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
     align-items: center;
     justify-content: center;
-    
+    gap: 3rem;
 }
 
 .instrument-info {
-
-    align-items: center;
-    justify-content: center;
-    
-    margin: 1%;
-    padding-inline: 100px;
-    border-radius: 10px;
+    padding: 5rem;
+    margin: 0;
+    text-align: left;
 }
-
-
 
 .instrument-info h2 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: left;
-    font-size: 60px;
-    margin: 0px;
-}
-.instrument-info p {
-    text-align: start;
-    max-width: 1000px;
-    font-size: 40px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Lucida Sans', sans-serif;
+    
+    font-size: clamp(2rem, 5vw, 60px); 
+
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
 }
 
-.instrument-info-imagen img{
-    width: 70vh;
+.instrument-info p {
+    font-family: 'Gill Sans', sans-serif;
+
+    font-size: clamp(1.1rem, 2.5vw, 40px);
+    line-height: 1.4;
+    max-width: 100%; 
+    text-align: left;
+}
+
+.instrument-info-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instrument-info-imagen img {
+    max-width: 100%;
+    height: auto;
+
+    width: clamp(280px, 70%, 70vh);
     transition: transform 0.5s ease;
+}
+
+.instrument-info-imagen img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 768px) {
+    .instrument-incentivo {
+        /* En móvil, el texto y la imagen se centran */
+        text-align: center;
+    }
+    
+    .instrument-info h2, 
+    .instrument-info p {
+        text-align: center;
+    }
 }
 
 .instrument-info-imagen img:hover{
@@ -59,105 +84,92 @@ main  {
 }
 
 
-
+/* Contenedor Principal */
 .instrument-content {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-
-    padding: 10% 6% 6% 6%;
-    margin: 4% 6% 4% 6%;
-    gap: 100px;
+    display: flex;
+    flex-direction: column;
+    /* Usamos rem y % para que respire en móviles */
+    padding: clamp(2rem, 8vh, 5rem) 5%;
+    margin: 2rem auto;
+    gap: clamp(20rem, 5vw, 4rem);
+    max-width: 1200px;
 }
 
 .instrument-content-info {
     display: flex;
     flex-direction: column;
-
-    gap: 100px;
+    gap: clamp(2rem, 5vh, 4rem);
 }
+
 .instrument-titulo h3 {
-    font-size: 60px;
-    margin: 0%;
-    padding: 0%;
+    /* Fuente fluida: min 1.8rem, ideal 4vw, max 60px */
+    font-size: clamp(1.8rem, 4vw, 3.75rem);
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
 }
 
-.instrument-titulo {
-    margin: 1%;
-    padding: 0%;
-}
-
+/* Contenedor de Tarjetas con Autocompletado */
 .intrument-conteiner-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    
+    /* CLAVE: Crea columnas de mínimo 280px. Si no caben, las baja automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
     justify-content: center;
-    align-items: center;
-
-    gap: 20px;
+    align-items: stretch; /* Para que todas tengan el mismo alto si el texto varía */
 }
 
 .instrument-card {
     position: relative; 
-    
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
+    
+    /* Cambiamos height fijo por min-height para que el texto largo no se salga */
+    min-height: 200px;
+    height: auto;
+    
+    background-color: rgba(240, 240, 240, 0.9);
+    border-radius: 20px;
+    padding: 3.5rem 1.5rem 1.5rem; /* Más espacio arriba para el icono */
+    margin-top: 1.5rem; 
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
 
-    height: 200px;
-    
-    background-color: rgba(240, 240, 240, 0.809); /* Gris claro con ligera transparencia */
-    border-radius: 20px; /* Bordes más redondeados como en la imagen */
-    
-    padding: 50px 20px 30px 20px; /* Más espacio arriba para que el icono no tape el texto */
-    margin-top: 10px; /* Espacio para el icono que sobresale */
-    
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
-    border: none; /* Quitamos el borde sólido para un look más moderno */
+.instrument-card:hover {
+    transform: translateY(-5px);
 }
 
 .card-icon {
     position: absolute;
-    top: -30px; /* Lo sube exactamente a la mitad del borde superior */
-    
+    top: -30px; 
     width: 60px;
     height: 60px;
-    
-    background-color: #f1c40f; /* Amarillo de tu logo */
-    
+    background-color: #f1c40f;
     border-radius: 50%;
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card-icon span {
-    font-weight: bold;
-    font-size: 20px;
-    color: #000;
-}
-
 .instrument-card h4 {
-    font-family: sans-serif;
-    
     color: #590303;
-    font-size: 30px;
+    /* Tamaño de fuente adaptable */
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .instrument-card p {
     text-align: center;
-    color: #000000;
-    font-size: 20px;
+    color: #333;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
     line-height: 1.5;
 }
-
-
-
 
 
 
@@ -166,38 +178,66 @@ main  {
     text-align: center;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    
+    /* padding lateral */
+    padding: 2rem 5%;
 }
 
 .precios-titulo {
-    font-size: 60px;
-    
+    /* Fuente fluida */
+    font-size: clamp(2rem, 5vw, 60px); 
     color: #fff;
+    margin-bottom: 3rem;
 }
-
 
 .precios-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    gap: 1%;
+    /* auto-fit: acomoda las que quepan en una fila */
+    /* minmax: evita que se hagan más chicas de 300px o más grandes de 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    /* Centra las tarjetas si sobra espacio */
+    justify-content: center; 
+    
+    /* stretch: hace que todas tengan la misma altura aunque el texto varíe */
+    align-items: stretch; 
+    
+    gap: 2rem;
+    max-width: 1200px; /* Evita que en monitores gigantes se separen demasiado */
+    margin: 0 auto;    /* Centra todo el contenedor */
+    padding: 20px;
 }
 
 /* Estilo de la Tarjeta */
 .precio-card {
     background: #1e1e1e;
-    
     border: 1px solid #333;
     border-radius: 20px;
-
-    padding: 40px 30px;
-    width: 300px;
+    padding: 2.5rem 1.5rem;
+    
+    /* ELIMINAMOS width: 300px; Ahora el grid controla el ancho */
+    width: 100%; 
+    max-width: 400px; /* Evita que se estiren demasiado en pantallas muy grandes */
 
     position: relative;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Flexbox interno para que el botón siempre quede alineado al fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ajuste para la tarjeta destacada en móviles */
+@media (max-width: 768px) {
+    .precio-card.destacado {
+        /* Reducimos el escalado excesivo en móvil para evitar que se corte el borde */
+        transform: scale(1); 
+        margin: 10px 0;
+    }
+    
+    .precio-card.destacado:hover {
+        transform: translateY(-10px);
+    }
 }
 
 .precio-card:hover {
@@ -205,10 +245,12 @@ main  {
     box-shadow: 0 15px 30px rgba(241, 196, 15, 0.2);
 }
 
-/* Tarjeta Destacada (La de 200) */
+/* Ajuste para la tarjeta destacada */
 .precio-card.destacado {
     border: 2px solid #f1c40f;
-    transform: scale(1.05);
+    /* Quitamos el scale fijo en móvil para que no choque con otras tarjetas */
+    transform: scale(1); 
+    transition: transform 0.3s ease;
 }
 
 .precio-card.destacado:hover {
@@ -426,158 +468,3 @@ input:focus, select:focus {
     margin: 0%;
     padding: 1%;
 }
-
-/* =================== Reglas responsivas para instrumentos =================== */
-
-@media (max-width: 1024px) {
-    main {
-        padding: 8% 4% 6% 4%;
-    }
-
-    .instrument-incentivo {
-        grid-template-columns: 1fr;
-        padding: 0;
-        gap: 20px;
-    }
-
-    .instrument-info {
-        padding-inline: 30px;
-    }
-
-    .instrument-info-imagen img,
-    .guitarra img,
-    .violin img,
-    .piano img {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
-    }
-
-    .instrument-content {
-        padding: 6% 4% 4% 4%;
-        gap: 60px;
-    }
-
-    .intrument-conteiner-card {
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-    }
-
-    .instrument-titulo h3 {
-        font-size: 40px;
-    }
-
-    .precio-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .precio-card {
-        width: auto;
-        padding: 30px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        padding: 6% 3% 4% 3%;
-    }
-
-    .instrument-info h2 {
-        font-size: 36px;
-    }
-
-    .instrument-info p {
-        font-size: 18px;
-    }
-
-    .instrument-content {
-        padding: 4% 2% 3% 2%;
-        gap: 40px;
-    }
-
-    .intrument-conteiner-card {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .precio-container {
-        grid-template-columns: 1fr;
-    }
-
-    .precio-card .valor {
-        font-size: 2.5rem;
-    }
-
-    .form-container {
-        padding: 4vh;
-        max-width: 100%;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 4% 3% 4% 3%;
-    }
-
-    .instrument-info h2 {
-        font-size: 28px;
-    }
-
-    .instrument-info p {
-        font-size: 16px;
-    }
-
-    .instrument-info-imagen img,
-    .guitarra img,
-    .violin img,
-    .piano img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .instrument-card {
-        padding: 30px 16px 20px 16px;
-        height: auto;
-    }
-
-    .card-icon {
-        width: 48px;
-        height: 48px;
-        top: -24px;
-    }
-
-    .instrument-card h4 {
-        font-size: 20px;
-    }
-
-    .instrument-card p {
-        font-size: 14px;
-    }
-
-    .precio-titulo {
-        font-size: 32px;
-    }
-
-    .precio-card .valor {
-        font-size: 2rem;
-    }
-
-    .form-container {
-        padding: 3vh;
-    }
-}
-
-/* Evitar overflow de imágenes */
-.instrument-info-imagen img, .guitarra img, .violin img, .piano img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Fin reglas responsivas instrumentos */

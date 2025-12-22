@@ -1,9 +1,36 @@
-from flask import Flask, render_template, request, redirect
+import os
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+uri = os.getenv("DATABASE_URL") 
+
+if uri and uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class Reserva(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100), nullable=False)
+    dni = db.Column(db.String(20), nullable=False)
+    telefono = db.Column(db.String(20), nullable=False)
+    instrumento = db.Column(db.String(50), nullable=False)
+    plan = db.Column(db.String(50), nullable=False)
+
+
+# Crear las tablas en la base de datos
+with app.app_context():
+    db.create_all()
+
+
+# --- RUTAS ---
 @app.route("/")
-def index(): # Cambiado de root a index
+def index():
     return render_template("index.html")
 
 @app.route("/aprestamiento_musical")
@@ -34,41 +61,27 @@ def organo():
 def violin():
     return render_template("violin.html")
 
-
-@app.route("/reserva", methods=["POST"])
+@app.route("/reserva", methods=["GET", "POST"])
 def reserva():
     if request.method == "POST":
+        # Datos del formulario
+        nueva_reserva = Reserva(
+            nombre=request.form.get("nombre"),
+            dni=request.form.get("dni"),
+            telefono=request.form.get("telefono"),
+            instrumento=request.form.get("instrumento"),
+            plan=request.form.get("plan")
+        )
         
-        nombre_estudiante = request.form.get("nombre")
-        dni_estudiante = request.form.get("dni")
-        telefono_estudiante = request.form.get("telefono")
-        instrumento_seleccionado = request.form.get("instrumento")
-        plan_seleccionado = request.form.get("plan")
-
+        # Guardar en la base de datos de Render
         try:
-            # 2. Creamos el objeto con el modelo Inscripcion que definimos antes
-            nueva_inscripcion = Inscripcion(
-                nombre=nombre_estudiante,
-                dni=dni_estudiante,
-                instrumento=instrumento_seleccionado,
-                plan=plan_seleccionado
-            )
-
-            # 3. Guardamos en PostgreSQL
-            
-
-            # 4. Redirigimos al inicio con un mensaje de éxito (opcional)
-            return redirect()
-            
+            db.session.add(nueva_reserva)
+            db.session.commit()
+            return redirect(url_for('index')) # Redirige al inicio tras éxito
         except Exception as e:
-            # En caso de error, deshacemos los cambios
-            
-            # BD ROLLBACK
-            
-            return f"Error al guardar: {str(e)}", 500
-        
+            return f"Hubo un error al guardar la reserva: {e}"
+
     return render_template("reserva.html")
 
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
