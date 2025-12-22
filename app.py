@@ -15,9 +15,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Reserva(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    dni = db.Column(db.String(20), primary_key=True)
+    ap_paterno = db.Column(db.String(100), nullable=False)
+    ap_materno = db.Column(db.String(100), nullable=False)
     nombre = db.Column(db.String(100), nullable=False)
-    dni = db.Column(db.String(20), nullable=False)
     telefono = db.Column(db.String(20), nullable=False)
     instrumento = db.Column(db.String(50), nullable=False)
     plan = db.Column(db.String(50), nullable=False)
@@ -27,6 +28,12 @@ class Reserva(db.Model):
 with app.app_context():
     db.create_all()
 
+# --- BLOQUE TEMPORAL PARA REINICIAR LA TABLA ---
+@app.route("/reset_db_12345")
+def reset_db():
+    db.drop_all()    # Borra la tabla vieja
+    db.create_all()  # Crea la tabla nueva con tus columnas de DNI, Apellidos, etc.
+    return "Base de datos reiniciada con éxito. Ya puedes borrar esta ruta."
 
 # --- RUTAS ---
 @app.route("/")
@@ -66,8 +73,10 @@ def reserva():
     if request.method == "POST":
         # Datos del formulario
         nueva_reserva = Reserva(
-            nombre=request.form.get("nombre"),
             dni=request.form.get("dni"),
+            ap_paterno=request.form.get("apellido-paterno"),
+            ap_materno=request.form.get("apellido-materno"),
+            nombre=request.form.get("nombre"),
             telefono=request.form.get("telefono"),
             instrumento=request.form.get("instrumento"),
             plan=request.form.get("plan")
@@ -83,21 +92,37 @@ def reserva():
 
     return render_template("reserva.html")
 
+
 @app.route("/admin_taller")
 def admin():
-    # Obtenemos todas las reservas de la base de datos
     inscritos = Reserva.query.all()
     
-    # Creamos una tabla simple en HTML para mostrar los resultados
     html = """
     <h1>Lista de Alumnos Inscritos</h1>
     <table border="1" style="width:100%; border-collapse: collapse;">
         <tr>
-            <th>ID</th><th>Nombre</th><th>DNI</th><th>Instrumento</th><th>Plan</th>
+            <th>DNI</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Instrumento</th>
+            <th>Plan</th>
         </tr>
     """
+    
     for alumno in inscritos:
-        html += f"<tr><td>{alumno.id}</td><td>{alumno.nombre}</td><td>{alumno.dni}</td><td>{alumno.instrumento}</td><td>{alumno.plan}</td></tr>"
+        html += f"""
+        <tr>
+            <td>{alumno.dni}</td>
+            <td>{alumno.ap_paterno}</td>
+            <td>{alumno.ap_materno}</td>
+            <td>{alumno.nombre}</td>
+            <td>{alumno.telefono}</td>
+            <td>{alumno.instrumento}</td>
+            <td>{alumno.plan}</td>
+        </tr>
+        """
     
     html += "</table><br><a href='/'>Volver al inicio</a>"
     return html
