@@ -18,7 +18,7 @@ db = SQLAlchemy(app)
 
 # --- MODELO DE DATOS ---
 class Reserva(db.Model):
-    dni = db.Column(db.String(20), nullable=False)
+    dni = db.Column(db.String(20), primary_key=True)
     ap_paterno = db.Column(db.String(100), nullable=False)
     ap_materno = db.Column(db.String(100), nullable=False)
     nombre = db.Column(db.String(100), nullable=False)
