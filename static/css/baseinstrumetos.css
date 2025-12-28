@@ -109,116 +109,116 @@ body {
 /*---- Seccion hero general ----*/
 
 .hero-section {
-    position: relative; /* Necesario para el pseudo-elemento */
-    
-    width: 100%;
-    min-height: 100vh;
+  position: relative; /* Necesario para el pseudo-elemento */
 
+  width: 100%;
+  min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-    color: #ffffff;
-    
-    overflow: hidden; /* para que el blur no se salga */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  color: #ffffff;
 
-    box-shadow: 0px 2px 200px 0px rgb(0, 0, 0);
-    box-sizing: border-box;
+  overflow: hidden; /* para que el blur no se salga */
+
+  box-shadow: 0px 2px 200px 0px rgb(0, 0, 0);
+  box-sizing: border-box;
 }
 
 .hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0; 
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  content: "";
+  position: absolute;
+  inset: 0;
 
-    filter: blur(10px);
-    transform: scale(1.1);
-    z-index: -1; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  filter: blur(10px);
+  transform: scale(1.1);
+  z-index: -1;
 }
-
 
 /*Seccion de palabras en hero*/
 
-.hero-section h2{
-    font-size: 190px;
+.hero-section h2 {
+  font-size: clamp(3rem, 20vw, 12rem);
 
-    margin: 0%;
+  margin: 1%;
 }
 
-.hero-section h3{
-    font-size: 30px;
-    
-    font-weight: lighter;
+.hero-section h3 {
+  font-size: 30px;
 
-    margin: 1%;
+  font-weight: lighter;
+
+  margin: 1%;
 }
 
-.hero-section button{
-    font-size: 30px;
+.hero-section button {
+  font-size: 30px;
 
-    font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 1%;
+  font-weight: bolder;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 1%;
 
-    border-radius: 10px;
-    border: none;
+  border-radius: 10px;
+  border: none;
 
-    background-color: #ffdd00;
+  background-color: #ffdd00;
 
-    transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 
-    cursor: pointer;
+  cursor: pointer;
 }
-
-
 
 .hero-section button:hover {
-    transform: scale(1.1);   
+  transform: scale(1.1);
 }
 
 .hero-section button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
-
 
 .hero-section a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
 
-
-
 .g-electrica::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/guitarra-electrica.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/guitarra-electrica.jpeg);
 }
 .g-acustica::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/guitarra.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/guitarra.jpg);
 }
 .organo::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/organo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/organo.jpg);
 }
 .canto::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/canto.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/canto.jpg);
 }
 .aprestamiento::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/aprestamiento.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/aprestamiento.jpg);
 }
 .violin::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/violin.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/violin.jpg);
 }
 .bateria::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(/static/imagenes/talleres/bateria.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url(/static/imagenes/talleres/bateria.jpeg);
 }
-
 
 .footer {
   display: grid;

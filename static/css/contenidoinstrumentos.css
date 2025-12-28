@@ -1,470 +1,457 @@
 main {
-    padding: clamp(1rem, 5%, 3rem) 5%;
+  padding: clamp(1rem, 5%, 3rem) 5%;
 }
 
 .instrument-incentivo {
-    margin: 3rem auto;
-    padding: 5em;
-    
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin: 3rem auto;
+  padding: 5em;
 
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .instrument-info {
-    padding: 5rem;
-    margin: 0;
-    text-align: left;
+  padding: 5rem;
+  margin: 0;
+  text-align: left;
 }
 
 .instrument-info h2 {
-    font-family: 'Lucida Sans', sans-serif;
-    
-    font-size: clamp(2rem, 5vw, 60px); 
+  font-family: "Lucida Sans", sans-serif;
 
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 5vw, 60px);
+
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
 
 .instrument-info p {
-    font-family: 'Gill Sans', sans-serif;
+  font-family: "Gill Sans", sans-serif;
 
-    font-size: clamp(1.1rem, 2.5vw, 40px);
-    line-height: 1.4;
-    max-width: 100%; 
-    text-align: left;
+  font-size: clamp(1.1rem, 2.5vw, 40px);
+  line-height: 1.4;
+  max-width: 100%;
+  text-align: left;
 }
 
 .instrument-info-imagen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .instrument-info-imagen img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 
-    width: clamp(280px, 70%, 70vh);
-    transition: transform 0.5s ease;
+  width: clamp(280px, 70%, 70vh);
+  transition: transform 0.5s ease;
 }
 
 .instrument-info-imagen img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 768px) {
-    .instrument-incentivo {
-        /* En móvil, el texto y la imagen se centran */
-        text-align: center;
-    }
-    
-    .instrument-info h2, 
-    .instrument-info p {
-        text-align: center;
-    }
+  .instrument-incentivo {
+    /* En móvil, el texto y la imagen se centran */
+    text-align: center;
+  }
+
+  .instrument-info h2,
+  .instrument-info p {
+    text-align: center;
+  }
 }
 
-.instrument-info-imagen img:hover{
-    transform: scale(1.2);
+.instrument-info-imagen img:hover {
+  transform: scale(1.2);
 }
 
-.guitarra img{
-    width: 35vh;    
+.guitarra img {
+  width: 35vh;
 }
 .violin img {
-    width: 45vh;
+  width: 45vh;
 }
 .piano img {
-    width: 55vh;
+  width: 55vh;
 }
-
 
 /* Contenedor Principal */
 .instrument-content {
-    display: flex;
-    flex-direction: column;
-    /* Usamos rem y % para que respire en móviles */
-    padding: clamp(2rem, 8vh, 5rem) 5%;
-    margin: 2rem auto;
-    gap: clamp(20rem, 5vw, 4rem);
-    max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  /* Usamos rem y % para que respire en móviles */
+  padding: clamp(2rem, 8vh, 5rem) 5%;
+  margin: 2rem auto;
+  gap: clamp(20rem, 5vw, 4rem);
+  max-width: 1200px;
 }
 
 .instrument-content-info {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2rem, 5vh, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vh, 4rem);
 }
 
 .instrument-titulo h3 {
-    /* Fuente fluida: min 1.8rem, ideal 4vw, max 60px */
-    font-size: clamp(1.8rem, 4vw, 3.75rem);
-    text-align: center;
-    margin: 0;
-    line-height: 1.2;
+  /* Fuente fluida: min 1.8rem, ideal 4vw, max 60px */
+  font-size: clamp(1.8rem, 4vw, 3.75rem);
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
 }
 
 /* Contenedor de Tarjetas con Autocompletado */
 .intrument-conteiner-card {
-    display: grid;
-    /* CLAVE: Crea columnas de mínimo 280px. Si no caben, las baja automáticamente */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    justify-content: center;
-    align-items: stretch; /* Para que todas tengan el mismo alto si el texto varía */
+  display: grid;
+  /* CLAVE: Crea columnas de mínimo 280px. Si no caben, las baja automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: stretch; /* Para que todas tengan el mismo alto si el texto varía */
 }
 
 .instrument-card {
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    /* Cambiamos height fijo por min-height para que el texto largo no se salga */
-    min-height: 200px;
-    height: auto;
-    
-    background-color: rgba(240, 240, 240, 0.9);
-    border-radius: 20px;
-    padding: 3.5rem 1.5rem 1.5rem; /* Más espacio arriba para el icono */
-    margin-top: 1.5rem; 
-    
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Cambiamos height fijo por min-height para que el texto largo no se salga */
+  min-height: 200px;
+  height: auto;
+
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: 20px;
+  padding: 3.5rem 1.5rem 1.5rem; /* Más espacio arriba para el icono */
+  margin-top: 1.5rem;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .instrument-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .card-icon {
-    position: absolute;
-    top: -30px; 
-    width: 60px;
-    height: 60px;
-    background-color: #f1c40f;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: absolute;
+  top: -30px;
+  width: 60px;
+  height: 60px;
+  background-color: #f1c40f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .instrument-card h4 {
-    color: #590303;
-    /* Tamaño de fuente adaptable */
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    margin-bottom: 0.5rem;
-    text-align: center;
+  color: #590303;
+  /* Tamaño de fuente adaptable */
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .instrument-card p {
-    text-align: center;
-    color: #333;
-    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-    line-height: 1.5;
+  text-align: center;
+  color: #333;
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  line-height: 1.5;
 }
-
-
 
 /* Contenedor Principal */
 .precios-section {
-    text-align: center;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* padding lateral */
-    padding: 2rem 5%;
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .precios-titulo {
-    /* Fuente fluida */
-    font-size: clamp(2rem, 5vw, 60px); 
-    color: #fff;
-    margin-bottom: 3rem;
+  /* Fuente fluida */
+  font-size: clamp(2rem, 5vw, 60px);
+  color: #fff;
+  margin-bottom: 3rem;
 }
 
 .precios-container {
-    display: grid;
-    /* auto-fit: acomoda las que quepan en una fila */
-    /* minmax: evita que se hagan más chicas de 300px o más grandes de 1fr */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    
-    /* Centra las tarjetas si sobra espacio */
-    justify-content: center; 
-    
-    /* stretch: hace que todas tengan la misma altura aunque el texto varíe */
-    align-items: stretch; 
-    
-    gap: 2rem;
-    max-width: 1200px; /* Evita que en monitores gigantes se separen demasiado */
-    margin: 0 auto;    /* Centra todo el contenedor */
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100% - 2rem, 300px), 1fr));
+  /* Centra las tarjetas si sobra espacio */
+  justify-content: center;
+
+  /* stretch: hace que todas tengan la misma altura aunque el texto varíe */
+  align-items: stretch;
+
+  justify-items: center;
+
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto; /* Centra todo el contenedor */
 }
 
 /* Estilo de la Tarjeta */
 .precio-card {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 2.5rem 1.5rem;
-    
-    /* ELIMINAMOS width: 300px; Ahora el grid controla el ancho */
-    width: 100%; 
-    max-width: 400px; /* Evita que se estiren demasiado en pantallas muy grandes */
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
 
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Flexbox interno para que el botón siempre quede alineado al fondo */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  max-width: 340px; /* Evita que se estiren demasiado en pantallas muy grandes */
+
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Ajuste para la tarjeta destacada en móviles */
 @media (max-width: 768px) {
-    .precio-card.destacado {
-        /* Reducimos el escalado excesivo en móvil para evitar que se corte el borde */
-        transform: scale(1); 
-        margin: 10px 0;
-    }
-    
-    .precio-card.destacado:hover {
-        transform: translateY(-10px);
-    }
+  .precio-card.destacado {
+    /* Reducimos el escalado excesivo en móvil para evitar que se corte el borde */
+    transform: scale(1);
+    margin: 10px 0;
+  }
+
+  .precio-card.destacado:hover {
+    transform: translateY(-10px);
+  }
 }
 
 .precio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(241, 196, 15, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(241, 196, 15, 0.2);
 }
 
 /* Ajuste para la tarjeta destacada */
 .precio-card.destacado {
-    border: 2px solid #f1c40f;
-    /* Quitamos el scale fijo en móvil para que no choque con otras tarjetas */
-    transform: scale(1); 
-    transition: transform 0.3s ease;
+  border: 2px solid #f1c40f;
+
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 
 .precio-card.destacado:hover {
-    transform: scale(1.05) translateY(-10px);
+  transform: scale(1.05) translateY(-10px);
 }
 
 .precio-tag {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #f1c40f;
-    color: #000;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f1c40f;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Tipografía de Precios */
 .precio-header h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 
 .precio-header p {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
 .precio-monto {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .precio-monto .moneda {
-    font-size: 1.2rem;
-    vertical-align: top;
-    color: #f1c40f;
+  font-size: 1.2rem;
+  vertical-align: top;
+  color: #f1c40f;
 }
 
 .precio-monto .valor {
-    font-size: 3.5rem;
-    font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: bold;
 }
 
 /* Lista de Detalles */
 .precio-detalles {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .precio-detalles li {
-    margin-bottom: 12px;
-    color: #ccc;
-    font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #ccc;
+  font-size: 0.95rem;
 }
 
 .precio-detalles li::before {
-    content: "✓";
-    color: #f1c40f;
-    margin-right: 10px;
-    font-weight: bold;
+  content: "✓";
+  color: #f1c40f;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 /* Botón */
 .btn-precio {
-    background-color: transparent;
-    color: #f1c40f;
-    border: 2px solid #f1c40f;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
+  background-color: transparent;
+  color: #f1c40f;
+  border: 2px solid #f1c40f;
+
+  padding: 10px;
+  border-radius: 50px;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 .precio-card.destacado .btn-precio {
-    background-color: #f1c40f;
-    color: #000;
+  background-color: #f1c40f;
+  color: #000;
 }
 
 .btn-precio:hover {
-    background-color: #f1c40f;
-    color: #000;
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+  background-color: #f1c40f;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
 }
 
 
-
-
-
-
+/* Formulario reserva */
 
 .registro-section {
-    padding: 10vh 2vh 10vh 2vh;
+  padding: 10vh 2vh 10vh 2vh;
 
-    color: white;
-    
-    display: flex;
-    justify-content: center;
+  color: white;
+
+  display: flex;
+  justify-content: center;
 }
 
 .form-container {
-    background-color: #1e1e1ef1;
-    
-    padding: 5vh;
+  background-color: #1e1e1ef1;
 
-    border-radius: 20px;
+  padding: 5vh;
 
-    max-width: 600px;
-    width: 100%;
+  border-radius: 20px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid #333;
+  max-width: 600px;
+  width: 100%;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
 }
 
 .form-container h2 {
-    color: #ffffff;
+  color: #ffffff;
 
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
 }
 
 .form-container p {
-    text-align: center;
-    color: #bbb;
-    margin-bottom: 30px;
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 30px;
 }
 
 .inscripcion-form {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
+  width: 100%;
 }
 
 .form-group {
-    margin: 1vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-
+  margin: 1vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
-
 
 label {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #f1c40f;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #f1c40f;
 }
 
-input, select {
-    width: 100%;
-    padding: 12px;
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-input:focus, select:focus {
-    border-color: #f1c40f;
+input:focus,
+select:focus {
+  border-color: #f1c40f;
 }
-
-
 
 /* Botón de envío mejorado */
 .btn-submit {
-    width: 100%;
-    padding: 15px;
-    background-color: #f1c40f;
-    color: #000;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  padding: 15px;
+  background-color: #f1c40f;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-precio {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .btn-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
 }
 
 .main-reserva {
-    background-image: url(https://img.freepik.com/vector-gratis/patron-notas-musicales-sobre-fondo-negro_1017-32303.jpg?semt=ais_hybrid&w=740&q=80);
-    
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background-image: url(https://img.freepik.com/vector-gratis/patron-notas-musicales-sobre-fondo-negro_1017-32303.jpg?semt=ais_hybrid&w=740&q=80);
 
-    margin: 0%;
-    padding: 1%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  margin: 0%;
+  padding: 1%;
 }
