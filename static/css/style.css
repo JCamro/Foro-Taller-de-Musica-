@@ -313,14 +313,18 @@ main {
 .servicios {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
 
+  flex-direction: column; /* Mantiene la lista vertical */
+  
   justify-content: center;
   align-items: center;
-
-  gap: 5rem;
+  
+  /* Gap dinámico: más pequeño en móvil (2rem), más grande en PC (5rem) */
+  gap: clamp(2rem, 5vh, 5rem); 
+  
   padding: 1.5rem;
-
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .guitarraAcustica {
@@ -357,41 +361,76 @@ main {
     url(/static/imagenes/talleres/canto.jpg);
 }
 
+/* Estilo Base de la Tarjeta */
 .card-servicios {
-  width: 90%;
-  height: 450px;
-
-  padding: 0px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%; 
+  max-width: 90%; /* Evita que se vuelvan gigantes en PC */
+  max-height: 400px;
+  
+  /* Mantiene una proporción bonita (tipo video de Youtube) */
+  aspect-ratio: 16/9; 
+  /* Asegura una altura mínima para que el texto siempre quepa */
+  min-height: 200px; 
 
   border: 1px solid #3a3a3a;
   border-radius: 12px;
   overflow: hidden;
+  position: relative; /* Necesario para efectos */
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   box-shadow: 0 4px 15px rgba(74, 63, 1, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  font-size: 500%;
-  font-style: italic;
-  letter-spacing: 30px;
 }
 
+/* El enlace ahora controla el centrado del contenido */
 .card-servicios a {
-  padding: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+  
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: white;
+  
+  /* Capa oscura extra para asegurar que el texto se lea sobre cualquier foto */
+  background: rgba(0, 0, 0, 0.3); 
+  transition: background 0.3s;
 }
 
+/* Tipografía del Título (H4) */
+.card-servicios h4 {
+  /* AQUÍ ESTÁ EL ARREGLO DE RESPONSIVIDAD */
+  /* Min: 1.5rem, Ideal: 6% del ancho, Max: 3.5rem */
+  font-size: clamp(1.5rem, 6vw, 3.5rem); 
+  
+  /* Espaciado normal, 30px era demasiado */
+  letter-spacing: 2px; 
+  
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  
+  margin: 0;
+  padding: 0 10px; /* Para que no toque los bordes */
+  
+  /* Sombra para leerse mejor */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8); 
+}
+
+/* Efectos Hover */
 .card-servicios:hover {
   transform: scale(1.02);
   box-shadow: 0 15px 30px rgba(213, 202, 159, 0.2);
+}
+
+.card-servicios:hover a {
+  background: rgba(0, 0, 0, 0.1); /* Aclara la imagen al pasar el mouse */
 }
 
 .ubicacion {
